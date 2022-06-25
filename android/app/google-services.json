@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "1067057751565",
+    "project_id": "trailusja",
+    "storage_bucket": "trailusja.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1067057751565:android:b03428fba17baf07c8d744",
+        "android_client_info": {
+          "package_name": "com.example.trailapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1067057751565-2bq9plsmcou4vk0jpgo1kr9q0s47cgt1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBFw9XVUGdEWM9ICFh5AU2xzTA9vYfw07w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1067057751565-2bq9plsmcou4vk0jpgo1kr9q0s47cgt1.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1067057751565-jikv3ep2o5p6ph49ftjjgq6otmo9j0bb.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.app"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

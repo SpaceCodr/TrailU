@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter/services.dart';
 import 'package:sliding_clipped_nav_bar/sliding_clipped_nav_bar.dart';
 
 
@@ -38,20 +37,15 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    return  AnnotatedRegion<SystemUiOverlayStyle>(
-        value:SystemUiOverlayStyle(
-          systemNavigationBarColor: navigationBarColor,
-          systemNavigationBarIconBrightness: Brightness.dark,
-        ),
-      child: Scaffold(
+    return  Scaffold(
       backgroundColor: Colors.grey,
       body: PageView(
         physics: const NeverScrollableScrollPhysics(),
         controller: pageController,
 
       ),
-      bottomNavigationBar: SlidingClippedNavBar(
-        backgroundColor: Colors.white,
+      bottomNavigationBar: SlidingClippedNavBar.colorful(
+        backgroundColor: Colors.black,
         onButtonPressed: (index){
           setState((){
             selectedIndex = index;
@@ -59,19 +53,19 @@ class _HomePageState extends State<HomePage> {
           pageController.animateToPage(selectedIndex, duration: const Duration(milliseconds: 400), curve: Curves.easeOutQuad);
         },
         iconSize: 30,
-        activeColor: Colors.transparent,
         selectedIndex: selectedIndex,
-        barItems: [
-          BarItem(title: 'Tasks', icon: Icons.task_alt_rounded,activeColor: Colors.orange,inactiveColor: Colors.white30),
-          BarItem(title: 'Timer', icon: Icons.access_time_rounded,activeColor: Colors.deepPurple,inactiveColor: Colors.white30),
-          BarItem(title: 'Stats', icon: Icons.bar_chart,activeColor: Colors.pink,inactiveColor: Colors.white30),
-          BarItem(title: 'Account', icon: Icons.account_circle_rounded,activeColor: Colors.red,inactiveColor: Colors.white30),
+        barItems: <BarItem>[
+          BarItem(title: 'Tasks', icon: Icons.task_alt_rounded,activeColor: Colors.blue,inactiveColor: Colors.orange),
+          BarItem(title: 'Timer', icon: Icons.access_time_rounded,activeColor: Colors.purple,inactiveColor: Colors.orange),
+          BarItem(title: 'Stats', icon: Icons.bar_chart,activeColor: Colors.pink,inactiveColor: Colors.orange),
+          BarItem(title: 'Account', icon: Icons.account_circle_rounded,activeColor: Colors.cyan,inactiveColor: Colors.orange),
         ],
       ),
       appBar: AppBar(
+        leading: null,
+        automaticallyImplyLeading: false,
         foregroundColor: Colors.orange,
         backgroundColor: Colors.redAccent,
-        leading: null,
         actions: <Widget>[
           IconButton(
               onPressed: () {
@@ -83,7 +77,6 @@ class _HomePageState extends State<HomePage> {
           ),
         ],
       ),
-    ),
     );
   }
 }

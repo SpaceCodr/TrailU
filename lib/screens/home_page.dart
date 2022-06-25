@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:sliding_clipped_nav_bar/sliding_clipped_nav_bar.dart';
+import 'package:trailapp/our_screens.dart';
 
 
 User? loggedinUser;
@@ -42,7 +43,9 @@ class _HomePageState extends State<HomePage> {
       body: PageView(
         physics: const NeverScrollableScrollPhysics(),
         controller: pageController,
-
+        children: [
+          TasksPage()
+        ],
       ),
       bottomNavigationBar: SlidingClippedNavBar.colorful(
         backgroundColor: Colors.black,

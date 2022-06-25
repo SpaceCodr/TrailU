@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
+final _auth = FirebaseAuth.instance;
 class TasksPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -25,16 +27,30 @@ class TasksPage extends StatelessWidget {
         ),
         floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
         appBar: AppBar(
-            centerTitle: true,
-            backgroundColor: Colors.black,
-            title: Text(
-              "MY TASKS",
-              style: TextStyle(
-                fontFamily: 'VT323',
-                fontSize: 25,
-                wordSpacing: 5,
-              ),
-            )),
+          centerTitle: true,
+          title: Text(
+            'MY TASKS',
+            style: TextStyle(
+              fontFamily: 'Titlefont6',
+              fontSize: 40,
+              wordSpacing: 5,
+            ),
+          ),
+          leading: null,
+          automaticallyImplyLeading: false,
+          foregroundColor: Colors.orange,
+          backgroundColor: Colors.redAccent,
+          actions: <Widget>[
+            IconButton(
+              onPressed: () {
+                _auth.signOut();
+                Navigator.pop(context);
+              },
+              icon: Icon(Icons.logout_outlined,size: 30,),
+
+            ),
+          ],
+        ),
         backgroundColor: Colors.blueGrey[900],
         body: Center(
             child: Padding(

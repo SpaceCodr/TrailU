@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:sliding_clipped_nav_bar/sliding_clipped_nav_bar.dart';
 import 'package:trailapp/our_screens.dart';
+import 'package:trailapp/screens/account_page.dart';
+import 'package:trailapp/screens/stats_page.dart';
+import 'package:trailapp/screens/timer_page.dart';
 
 
 User? loggedinUser;
@@ -44,7 +47,10 @@ class _HomePageState extends State<HomePage> {
         physics: const NeverScrollableScrollPhysics(),
         controller: pageController,
         children: [
-          TasksPage()
+          TasksPage(),
+          TimerPage(),
+          StatsPage(),
+          AccountPage()
         ],
       ),
       bottomNavigationBar: SlidingClippedNavBar.colorful(
@@ -62,22 +68,6 @@ class _HomePageState extends State<HomePage> {
           BarItem(title: 'Timer', icon: Icons.access_time_rounded,activeColor: Colors.purple,inactiveColor: Colors.orange),
           BarItem(title: 'Stats', icon: Icons.bar_chart,activeColor: Colors.pink,inactiveColor: Colors.orange),
           BarItem(title: 'Account', icon: Icons.account_circle_rounded,activeColor: Colors.cyan,inactiveColor: Colors.orange),
-        ],
-      ),
-      appBar: AppBar(
-        leading: null,
-        automaticallyImplyLeading: false,
-        foregroundColor: Colors.orange,
-        backgroundColor: Colors.redAccent,
-        actions: <Widget>[
-          IconButton(
-              onPressed: () {
-                _auth.signOut();
-                Navigator.pop(context);
-              },
-              icon: Icon(Icons.logout_outlined),
-
-          ),
         ],
       ),
     );

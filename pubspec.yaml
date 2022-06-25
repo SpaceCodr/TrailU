@@ -67,6 +67,7 @@ flutter:
     - assets/sand-clock.gif
     - assets/header.jpg
     - assets/mountains.jpg
+    - assets/fonts/
   # To add assets to your application, add an assets section, like this:
   # assets:
   #   - images/a_dot_burr.jpeg
@@ -77,7 +78,25 @@ flutter:
 
   # For details regarding adding assets from package dependencies, see
   # https://flutter.dev/assets-and-images/#from-packages
-
+  fonts:
+    - family: Titlefont1
+      fonts:
+        - asset: assets/fonts/Pacifico-Regular.ttf
+    - family: Titlefont2
+      fonts:
+          - asset: assets/fonts/LuckiestGuy-Regular.ttf
+    - family: Titlefont3
+      fonts:
+            - asset: assets/fonts/Lobster-Regular.ttf
+    - family: Titlefont4
+      fonts:
+            - asset: assets/fonts/DancingScript-VariableFont_wght.ttf
+    - family: Titlefont5
+      fonts:
+            - asset: assets/fonts/BerkshireSwash-Regular.ttf
+    - family: Titlefont6
+      fonts:
+            - asset: assets/fonts/Bangers-Regular.ttf
   # To add custom fonts to your application, add a fonts section here,
   # in this "flutter" section. Each entry in this list should have a
   # "family" key with the font family name, and a "fonts" key with a

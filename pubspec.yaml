@@ -68,6 +68,8 @@ flutter:
     - assets/header.jpg
     - assets/mountains.jpg
     - assets/fonts/
+    - assets/Iron_3_Rank.gif
+    - assets/Iron_3_Rank.jpg
   # To add assets to your application, add an assets section, like this:
   # assets:
   #   - images/a_dot_burr.jpeg

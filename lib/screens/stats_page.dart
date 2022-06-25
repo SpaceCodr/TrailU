@@ -22,7 +22,14 @@ class _StatsPageState extends State<StatsPage> {
     'Immortal',
     'Radiant'
   ];
+  int index=0;
+  String? title;
 
+  @override
+  void initState(){
+    super.initState();
+    title = userLevels[index];
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -50,6 +57,32 @@ class _StatsPageState extends State<StatsPage> {
 
           ),
         ],
+      ),
+      body: LayoutBuilder(
+        builder: (BuildContext context,BoxConstraints viewportConstraints){
+          return SingleChildScrollView(
+            child: ConstrainedBox(
+              constraints: BoxConstraints(
+                minHeight: viewportConstraints.maxHeight,
+              ),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  Center(
+                    child: Text(
+                      'Current Rank: $title',
+                      style: TextStyle(fontFamily: 'Titlefont1',fontSize: 40),
+                    ),
+                  ),
+                  Center(
+                    child: Image.asset('assets/Iron_3_Rank.gif'),
+                  )
+                ],
+              ),
+            ),
+          );
+        },
       ),
     );
   }

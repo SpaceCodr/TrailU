@@ -51,8 +51,16 @@ class TasksPage extends StatelessWidget {
             ),
           ],
         ),
-        backgroundColor: Colors.blueGrey[900],
-        body: Center(
+        backgroundColor: Colors.white,
+        body: Container(
+          height: MediaQuery.of(context).size.height,
+          decoration: BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage('assets/full-bloom.png'),
+            fit: BoxFit.cover,
+            ),
+          ),
+        child :Center(
             child: Padding(
               padding: EdgeInsets.all(10),
               child: ListView(
@@ -70,7 +78,7 @@ class TasksPage extends StatelessWidget {
                       )),
                 ],
               ),
-            )));
+            ))));
   }
 }
 

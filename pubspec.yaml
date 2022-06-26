@@ -40,6 +40,7 @@ dependencies:
   cloud_firestore: ^3.1.18
   uuid: ^3.0.6
   sliding_clipped_nav_bar: ^3.1.0+2
+  vector_math: ^2.1.2
 
 
 dev_dependencies:
@@ -70,6 +71,7 @@ flutter:
     - assets/fonts/
     - assets/Iron_3_Rank.gif
     - assets/Iron_3_Rank.jpg
+    - assets/full-bloom.png
   # To add assets to your application, add an assets section, like this:
   # assets:
   #   - images/a_dot_burr.jpeg

@@ -67,7 +67,7 @@ class _HomePageState extends State<HomePage> {
           BarItem(title: 'Tasks', icon: Icons.task_alt_rounded,activeColor: Colors.blue,inactiveColor: Colors.orange),
           BarItem(title: 'Timer', icon: Icons.access_time_rounded,activeColor: Colors.purple,inactiveColor: Colors.orange),
           BarItem(title: 'Stats', icon: Icons.bar_chart,activeColor: Colors.pink,inactiveColor: Colors.orange),
-          BarItem(title: 'Account', icon: Icons.account_circle_rounded,activeColor: Colors.cyan,inactiveColor: Colors.orange),
+          BarItem(title: 'Profile', icon: Icons.account_circle_rounded,activeColor: Colors.cyan,inactiveColor: Colors.orange),
         ],
       ),
     );

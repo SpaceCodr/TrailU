@@ -71,7 +71,7 @@ class TasksPage extends StatelessWidget {
                         'Add Task!',
                         style: TextStyle(
                           fontFamily: 'VT323',
-                          color: Colors.white,
+                          color: Colors.black,
                           fontSize: 25,
                         ),
                         textAlign: TextAlign.center,

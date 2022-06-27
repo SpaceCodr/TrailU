@@ -2,31 +2,30 @@ import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:trailapp/our_components.dart';
 
-String getSignupMessageFromErrorCode() {
-  var errorCode;
-  switch (errorCode) {
-    case "firebase_auth/weak-password":
-      return "Password should be at least 6 characters ";
-    case "ERROR_EMAIL_ALREADY_IN_USE":
-    case "account-exists-with-different-credential":
-    case "email-already-in-use":
-      return "Email already used. Go to login page.";
-    case "ERROR_USER_DISABLED":
-    case "user-disabled":
-      return "User disabled.";
-    case "ERROR_TOO_MANY_REQUESTS":
-    case "operation-not-allowed":
-      return "Too many requests to log into this account.";
-    case "ERROR_OPERATION_NOT_ALLOWED":
-    case "operation-not-allowed":
-      return "Server error, please try again later.";
-    case "ERROR_INVALID_EMAIL":
-    case "invalid-email":
-      return "Email address is invalid.";
-    default:
-      return "Signup failed. Please try again.";
-  }
-}
+//
+// String getSignupMessageFromErrorCode() {
+//   var errorCode;
+//   switch (errorCode) {
+//     case "auth/invalid-display-name":
+//     case "auth/invalid-email":
+//       return " Invalid email name!";
+//     case "auth/email-already-exists":
+//       return "Email already used. Go to login page.";
+//     case "auth/invalid-password":
+//       return "Weak Password!";
+//     case "ERROR_USER_DISABLED":
+//     case "user-disabled":
+//       return "User disabled.";
+//     case "ERROR_TOO_MANY_REQUESTS":
+//     case "operation-not-allowed":
+//       return "Too many requests to log into this account.";
+//     case "ERROR_OPERATION_NOT_ALLOWED":
+//     case "operation-not-allowed":
+//       return "Server error, please try again later.";
+//     default:
+//       return "Signup failed. Please try again.";
+//   }
+// }
 
 const kTextFieldDecoration = InputDecoration(
   hintText: 'Enter a value',
@@ -110,10 +109,18 @@ class _SignupPageState extends State<SignupPage> {
                       if (newUser != null) {
                         Navigator.pushNamed(context, 'home');
                       }
-                    } catch (error) {
-                      var errorMessage = getSignupMessageFromErrorCode();
-                      print(error);
-                      _showSnackbar(context, errorMessage);
+                    } on FirebaseAuthException catch (error) {
+                      //var errorMessage = getSignupMessageFromErrorCode();
+                      print(error.code);
+                      _showSnackbar(context, error.code);
+                    } on Exception catch (error) {
+                      if (email == " ") {
+                        _showSnackbar(
+                            context, "Email address cannot be empty!");
+                      } else if (password == " ") {
+                        _showSnackbar(
+                            context, "password cannot be empty!");
+                      }
                     }
                   })
             ],
@@ -131,7 +138,7 @@ class _SignupPageState extends State<SignupPage> {
         text,
         style: const TextStyle(fontFamily: 'Titlefont3', color: Colors.white),
       ),
-      backgroundColor: Colors.orangeAccent,
+      backgroundColor: Colors.black,
     );
     ScaffoldMessenger.of(context).showSnackBar(snackBar);
   }

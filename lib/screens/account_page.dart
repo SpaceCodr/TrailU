@@ -52,11 +52,11 @@ class _AccountPageState extends State<AccountPage> {
                     fontSize: 30,
                     fontWeight: FontWeight.normal),
               ),
-              SizedBox(
-                child: T(
-
-                ),
-              )
+              // SizedBox(
+              //   child: T(
+              //
+              //   ),
+              // )
             ],
           ),
 

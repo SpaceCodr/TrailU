@@ -44,6 +44,7 @@ dependencies:
   vector_math: ^2.1.2
   firebase: ^9.0.3
   auth: ^8.1.0
+  animated_button: ^0.2.0
 
 
 dev_dependencies:
